@@ -1,8 +1,6 @@
-
-
 def check(string)
   stack = []
-  for i in 0...string.length
+  (0...string.length).each do |i|
     if string[i] == '('
       stack << string[i]
     elsif string[i] == ')'
@@ -11,7 +9,7 @@ def check(string)
       end
     end
   end
-  return stack.empty?
+  stack.empty?
 end
 
-puts check(('qwerty()()'))
+puts check(")())")
