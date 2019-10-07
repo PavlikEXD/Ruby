@@ -1,9 +1,9 @@
 def check(string)
   stack = []
-  (0...string.length).each do |i|
-    if string[i] == '('
-      stack << string[i]
-    elsif string[i] == ')'
+  string.split('').each  do |char|
+    if char == '('
+      stack << char
+    elsif char == ')'
       if stack.pop != '('
         return false
       end
@@ -11,5 +11,3 @@ def check(string)
   end
   stack.empty?
 end
-
-puts check(")())")
