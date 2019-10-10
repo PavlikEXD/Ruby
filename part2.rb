@@ -1,5 +1,6 @@
 def palindrome?(string)
-  string.downcase!
-  string.delete! "!-/ "
-  string.slice(0...string.length/2).eql?(string.slice(string.length/2 + 1..-1).reverse!)
+  new_string = self
+  new_string.gsub!(/[^A-Za-z0-9]/, "")
+  new_string.downcase!
+  new_string == new_string.reverse
 end
