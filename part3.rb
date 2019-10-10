@@ -14,9 +14,10 @@ class String
     end
 
     def palindrome?
-      self.gsub!(/[^A-Za-z0-9]/, "")
-      self.downcase!
-      self == self.reverse
+      string = self
+      string.gsub!(/[^A-Za-z0-9]/, "")
+      string.downcase!
+      string == string.reverse
     end
 end
 
@@ -27,6 +28,3 @@ p '()(()())'.valid_brackets? #=> true
 p ')())'.valid_brackets? #=> false
 p 'qwerty()()'.valid_brackets? #=> true
 p 'asdf'.valid_brackets? #=> true
-string = "Alo!"
-p string.palindrome?
-p string
