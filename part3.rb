@@ -14,18 +14,19 @@ class String
     end
 
     def palindrome?
+      self.gsub!(/[^A-Za-z0-9]/, "")
       self.downcase!
-      self.delete! "!-/ "
-      self.slice(0...self.length/2).eql?(self.slice(self.length/2 + 1..-1).reverse!)
+      self == self.reverse
     end
-
 end
 
-puts 'taco cat'.palindrome? #=> true
-puts 'abcdcba'.palindrome? #=> true
+p 'taco cat'.palindrome? #=> true
+p 'abcdcba'.palindrome? #=> true
 
-
-puts '()(()())'.valid_brackets? #=> true
-puts ')())'.valid_brackets? #=> false
-puts 'qwerty()()'.valid_brackets? #=> true
-puts 'asdf'.valid_brackets? #=> true
+p '()(()())'.valid_brackets? #=> true
+p ')())'.valid_brackets? #=> false
+p 'qwerty()()'.valid_brackets? #=> true
+p 'asdf'.valid_brackets? #=> true
+string = "Alo!"
+p string.palindrome?
+p string
